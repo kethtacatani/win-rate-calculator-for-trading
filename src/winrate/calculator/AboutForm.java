@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.datatransfer.StringSelection;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
+import javax.swing.ImageIcon;
 
 /**
  *

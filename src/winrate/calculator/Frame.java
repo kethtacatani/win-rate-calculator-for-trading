@@ -118,7 +118,7 @@ public class Frame extends javax.swing.JFrame {
     }
             
     public void saveData() throws ClassNotFoundException, SQLException{
-        System.out.println("SaveData"); 
+        
         
         if (saveCB.isSelected()){
 
@@ -168,7 +168,7 @@ public class Frame extends javax.swing.JFrame {
         
     }
     public void preSave() throws SQLException, SQLException{
-        System.out.println("Presave");
+        
         windowsBar();
 
         Statement stmt = con.createStatement();
@@ -184,14 +184,14 @@ public class Frame extends javax.swing.JFrame {
                             "('1','0','0','0','0','0','100','350','501','310');";
                             PreparedStatement prep = con.prepareStatement(query);
                             prep.execute();
-                            System.out.println("Precount");
+                            
                        }
                     }
       
         if(!presave){
             presave = true;
             try{
-                System.out.println("Presave 2");
+                
                
                  
                 String query = "INSERT into namesDB(num, name, wins, loses, win_rate) VALUES"+
@@ -213,7 +213,7 @@ public class Frame extends javax.swing.JFrame {
         try{
            if(String.valueOf(winRate).equals("NaN")){
                winRate = 0.00;
-               System.out.println("winrate is 0");
+              
            }
             
         String query = "INSERT into nameDB(`name`, `wins`, `loses`, `win_rate`) VALUES"+
@@ -227,7 +227,7 @@ public class Frame extends javax.swing.JFrame {
                         prep.execute();
 
                         System.out.println("Saved to History"); 
-                        System.out.println("wr :"+winRate);
+                        
                         
         }
         catch (Exception e){
@@ -275,19 +275,14 @@ public class Frame extends javax.swing.JFrame {
         JDSizew = miniDialog.getSize().width;
         JDLocy = miniDialog.getLocation().y;
         JDLocx = miniDialog.getLocation().x;
-        System.out.println("w"+miniDialog.getSize().width);
-        System.out.println("h"+miniDialog.getSize().height);
-        System.out.println("x"+miniDialog.getLocation().x);
-        System.out.println("y"+miniDialog.getLocation().y);
+        
         }
         
     
     public void displayData() throws ClassNotFoundException, SQLException{
         
       
-      //this.setSize(502, 362);
-      //normal window size 502,height=362
-        System.out.println(this.getSize());
+      
         
        
             
@@ -312,8 +307,7 @@ public class Frame extends javax.swing.JFrame {
                     JDSizew = Integer.parseInt(rs.getString("JDSizew"));
                     JDLocx = Integer.parseInt(rs.getString("JDLocx"));
                     JDLocy = Integer.parseInt(rs.getString("JDLocy"));
-//                    System.out.println(rs.getString("JDSizeh"));
-//                    System.out.println(rs.getString("JDSizew"));
+
                 mute = rs.getString("mute");
                 System.out.println("Data Displayed");
                 
@@ -336,7 +330,7 @@ public class Frame extends javax.swing.JFrame {
                 else{
                     muteCB.setSelected(true);
                 }
-                System.out.println("wr :"+winRate);
+   
                 winRateResult();
             }
         
@@ -1302,14 +1296,12 @@ public class Frame extends javax.swing.JFrame {
         miniDialog.setSize(JDSizew, JDSizeh);
         miniDialog.setLocation(JDLocx,JDLocy);
         miniDialog.setVisible(true);
-//        JOptionPane.showMessageDialog(null, "Screen size is; \nh"+JDSizew+"\nw"+JDSizeh+"\nx"
-//               +JDLocx+"\ny"+JDLocy);
+
         
         
        
         
-        System.out.println(miniDialog.getSize());
-        System.out.println(miniDialog.getLocation());
+    
                 miniLabel();
 
         
